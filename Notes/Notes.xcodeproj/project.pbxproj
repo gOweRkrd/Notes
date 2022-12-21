@@ -14,6 +14,7 @@
 		50C683172952EDFD00ECAD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C683152952EDFD00ECAD2D /* LaunchScreen.storyboard */; };
 		50C683222952EF6500ECAD2D /* Extension+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C683212952EF6500ECAD2D /* Extension+TableViewController.swift */; };
 		50C683252952EFBE00ECAD2D /* MyOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C683242952EFBE00ECAD2D /* MyOwnCell.swift */; };
+		50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6832B2953023000ECAD2D /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		50C683182952EDFD00ECAD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C683212952EF6500ECAD2D /* Extension+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TableViewController.swift"; sourceTree = "<group>"; };
 		50C683242952EFBE00ECAD2D /* MyOwnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnCell.swift; sourceTree = "<group>"; };
+		50C6832B2953023000ECAD2D /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				50C6831E2952EEC900ECAD2D /* MainViewController */,
+				50C6832A2953020F00ECAD2D /* NotesViewController */,
+				50C683232952EF8200ECAD2D /* TableViewCell */,
 				50C6831F2952EEE100ECAD2D /* Supporting */,
 				50C683182952EDFD00ECAD2D /* Info.plist */,
 			);
@@ -70,7 +74,6 @@
 			children = (
 				50C6830E2952EDFC00ECAD2D /* MainViewController.swift */,
 				50C683212952EF6500ECAD2D /* Extension+TableViewController.swift */,
-				50C683232952EF8200ECAD2D /* TableViewCell */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -92,6 +95,14 @@
 				50C683242952EFBE00ECAD2D /* MyOwnCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		50C6832A2953020F00ECAD2D /* NotesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50C6832B2953023000ECAD2D /* NotesViewController.swift */,
+			);
+			path = NotesViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			files = (
 				50C6830F2952EDFC00ECAD2D /* MainViewController.swift in Sources */,
 				50C683222952EF6500ECAD2D /* Extension+TableViewController.swift in Sources */,
+				50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */,
 				50C6830B2952EDFC00ECAD2D /* AppDelegate.swift in Sources */,
 				50C683252952EFBE00ECAD2D /* MyOwnCell.swift in Sources */,
 				50C6830D2952EDFC00ECAD2D /* SceneDelegate.swift in Sources */,

@@ -16,9 +16,9 @@ extension MainViewController {
 
         NSLayoutConstraint.activate([
             myTableView.topAnchor.constraint(equalTo: view.topAnchor,constant:.myTableViewTopAnchor),
-            myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:.myTableViewTrailingAnchor),
+            myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:.myTableViewBottomAnchor)
+            myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
    

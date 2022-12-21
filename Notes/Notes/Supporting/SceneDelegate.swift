@@ -21,8 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = firstVC
-        let navController = UINavigationController (rootViewController: firstVC)
         window?.makeKeyAndVisible()
+        let navController = UINavigationController (rootViewController: firstVC)
+        window?.rootViewController = navController
+//        window?.overrideUserInterfaceStyle = .dark
+        
     }
 }
