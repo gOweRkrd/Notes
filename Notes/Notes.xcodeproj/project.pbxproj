@@ -16,6 +16,7 @@
 		50C683252952EFBE00ECAD2D /* MyOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C683242952EFBE00ECAD2D /* MyOwnCell.swift */; };
 		50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6832B2953023000ECAD2D /* NotesViewController.swift */; };
 		50C683302953341500ECAD2D /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6832F2953341500ECAD2D /* ExtensionKeyboard.swift */; };
+		50C68332295353D200ECAD2D /* ExtensionSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C68331295353D200ECAD2D /* ExtensionSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		50C683242952EFBE00ECAD2D /* MyOwnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnCell.swift; sourceTree = "<group>"; };
 		50C6832B2953023000ECAD2D /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		50C6832F2953341500ECAD2D /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
+		50C68331295353D200ECAD2D /* ExtensionSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				50C6830E2952EDFC00ECAD2D /* MainViewController.swift */,
 				50C683212952EF6500ECAD2D /* Extension+TableViewController.swift */,
+				50C68331295353D200ECAD2D /* ExtensionSearchBar.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				50C683302953341500ECAD2D /* ExtensionKeyboard.swift in Sources */,
 				50C6830F2952EDFC00ECAD2D /* MainViewController.swift in Sources */,
 				50C683222952EF6500ECAD2D /* Extension+TableViewController.swift in Sources */,
+				50C68332295353D200ECAD2D /* ExtensionSearchBar.swift in Sources */,
 				50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */,
 				50C6830B2952EDFC00ECAD2D /* AppDelegate.swift in Sources */,
 				50C683252952EFBE00ECAD2D /* MyOwnCell.swift in Sources */,
