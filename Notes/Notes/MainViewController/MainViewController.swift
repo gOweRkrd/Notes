@@ -12,9 +12,6 @@ import UIKit
 
 extension CGFloat {
     static let myTableViewTopAnchor : CGFloat =  50
-    static let myTableViewTrailingAnchor : CGFloat = 0
-    static let myTableViewBottomAnchor : CGFloat = 0
-    
 }
 
 class MainViewController: UIViewController,UITableViewDelegate, UISearchBarDelegate {
@@ -37,12 +34,14 @@ class MainViewController: UIViewController,UITableViewDelegate, UISearchBarDeleg
         navigationItem.title = "Notes"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.backButtonTitle = "back"
         
         searchController.searchBar.delegate = self
         
-        let addBarButtonItem = UIBarButtonItem(title: "add", style: .done, target: self, action: #selector(addNotes))
-        self.navigationItem.rightBarButtonItem  = addBarButtonItem
-        
+        var image = UIImage(systemName: "plus.circle")
+        image?.withTintColor(.black)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(addNotes))
+
     }
     
     func setupSearchBar() {
@@ -50,7 +49,8 @@ class MainViewController: UIViewController,UITableViewDelegate, UISearchBarDeleg
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     @objc func addNotes(){
-        print("Добавление заметки работает")
+        let nextScreen = NotesViewController()
+        self.navigationController?.pushViewController(nextScreen, animated: true)
     }
     
 }
