@@ -68,7 +68,7 @@ final class MainViewController: UIViewController {
         
         let context = appDelegate.persistentContainer.viewContext
         context.delete(contact)
-        try! context.save()
+        try? context.save()
         notesItems.remove(at: indexPath.row)
     }
     
@@ -116,7 +116,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Creating cell from HotelsListViewController failed")
         }
         
-        let task = notesItems[indexPath.row]
+        let task = notesItems.reversed()[indexPath.row]
         cell.textLabel?.text = task.taskToDo
         
         return cell
