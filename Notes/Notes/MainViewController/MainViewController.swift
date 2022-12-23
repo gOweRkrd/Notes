@@ -16,7 +16,8 @@ class MainViewController: UIViewController {
     var context: NSManagedObjectContext!
     var task: Task!
     
-
+    //    var filteredData: [Any] = []
+    
     
     // метод сохраняет данные в СoreData
     func saveTask (taskToDo:String) {
@@ -49,7 +50,7 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,10 @@ class MainViewController: UIViewController {
         myTableView.delegate = self
         
         navigationItem.title = "Notes"
+        navigationItem.backButtonTitle = "back"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //                filteredData = notesItems
         
         lazy var searchController = UISearchController(searchResultsController: nil)
         
@@ -70,26 +74,24 @@ class MainViewController: UIViewController {
         let image = UIImage(systemName: "plus.circle")
         image?.withTintColor(.black)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(addNotes))
-      
+        
         
     }
-   
+    
     func setupSearchBar() {
         self.navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     @objc func addNotes() {
-        let ac = UIAlertController(title: "Add Task", message: "add new task", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Add Notes", message: "add new notes", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { action in
             let textField = ac.textFields?[0]
             self.saveTask(taskToDo:(textField?.text)!)
             DispatchQueue.main.async {
-//                self.tableView.reloadData()
+                self.myTableView.reloadData()
             }
         }
-        
-        
         
         let cancel = UIAlertAction(title: "Cancel", style: .default,handler: nil)
         ac.addTextField {
@@ -100,7 +102,17 @@ class MainViewController: UIViewController {
         ac.addAction(ok)
         ac.addAction(cancel)
         present(ac,animated: true,completion: nil)
-      
+        
+    }
+    
+    func delete(_ contact: NSManagedObject, at indexPath: IndexPath) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        managedObjectContext.delete(contact)
+        notesItems.remove(at: indexPath.row)
+        
+        
     }
     
 }
@@ -109,8 +121,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
-     func numberOfSections(in tableView: UITableView) -> Int {
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
     
@@ -129,44 +141,47 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-   //  удаление ячеек
+    //      удаление ячеек
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.beginUpdates()
-            notesItems.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with:.fade)
-
-            tableView.endUpdates()
+            
+            do {
+                
+                let notes = notesItems[indexPath.row]
+                delete(notes, at: indexPath)
+                saveTask(taskToDo: "")
+                self.myTableView.reloadData()
+                
+                
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
         }
+        
     }
     
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//
-//        guard let mealToDelete = task.taskToDo?[indexPath.row] as? Task,editingStyle == .delete else {return}
-//
-//        context.delete(mealToDelete)
-//        // пересохраняем наш контекст
-//        do {
-//            try context.save()
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//        } catch let error as NSError {
-//            print("Error: \(error),description \(error.userInfo)")
-//        }
-//
-//    }
-
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextScreen = NotesViewController()
+        self.navigationController?.pushViewController(nextScreen, animated: true)
+        
+    }
     
-   
+    
 }
+
+//extension MainViewController: NotesViewControllerDelegate {
+//    func didTapSave() {
+//
+//    }
+//
+//}
+
+
 
 
 
