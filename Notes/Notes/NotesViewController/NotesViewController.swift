@@ -26,8 +26,7 @@ class NotesViewController: UIViewController {
             super.viewDidLoad()
             setupConstraints()
             view.backgroundColor = .white
-           
-
+        
         }
     }
 
