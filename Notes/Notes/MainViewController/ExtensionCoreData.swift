@@ -24,9 +24,8 @@ extension MainViewController {
         
         do {
             try context.save()
-            notesItems.append(taskObject)
+            notesItems.insert(taskObject, at: 0)
             print("Saved!Good Job!")
-            
         } catch {
             print(error.localizedDescription)
         }

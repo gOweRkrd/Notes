@@ -14,8 +14,14 @@ final class MainViewController: UIViewController {
     
     var notesItems: [Task] = []
     var task: Task!
+    var searchText: String = ""
     
-    var filteredData: [Any] = []
+    var filteredData: [Task] {
+        return notesItems.filter({
+            $0.taskToDo!.lowercased().starts(with: searchText) ||
+            searchText.isEmpty
+        })
+    }
     
     // MARK: - Lifecycle
     
@@ -29,13 +35,12 @@ final class MainViewController: UIViewController {
         myTableView.dataSource = self
         myTableView.delegate = self
         
+        searchController.searchBar.delegate = self
+        lazy var searchController = UISearchController(searchResultsController: nil)
+        
         navigationItem.title = "Notes"
         navigationItem.backButtonTitle = "Back"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        filteredData = notesItems
-        
-        lazy var searchController = UISearchController(searchResultsController: nil)
         
         // добавляем кнопку в NavigationBar
         let image = UIImage(systemName: "plus.circle")
@@ -58,16 +63,16 @@ final class MainViewController: UIViewController {
     
     // MARK: - Public Method
     
-    public func setupSearchBar() {
+    private func setupSearchBar() {
         self.navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    public func delete(_ contact: NSManagedObject, at indexPath: IndexPath) {
+    func delete(_ myNotes: NSManagedObject, at indexPath: IndexPath) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let context = appDelegate.persistentContainer.viewContext
-        context.delete(contact)
+        context.delete(myNotes)
         try? context.save()
         notesItems.remove(at: indexPath.row)
     }
@@ -97,6 +102,21 @@ final class MainViewController: UIViewController {
     }
 }
 
+// MARK: - SearchBar Delegate
+
+extension MainViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText = searchText.lowercased()
+        self.myTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchText = ""
+        self.myTableView.reloadData()
+    }
+}
+
 // MARK: - TableViewDataSource,TableViewDelegate
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
@@ -108,7 +128,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return notesItems.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,8 +136,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Creating cell from HotelsListViewController failed")
         }
         
-        let task = notesItems.reversed()[indexPath.row]
-        cell.textLabel?.text = task.taskToDo
+        cell.textLabel?.text = filteredData[indexPath.row].taskToDo
         
         return cell
     }
@@ -126,7 +145,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             
             do {
-                let notes = notesItems[indexPath.row]
+                let notes = filteredData[indexPath.row]
                 delete(notes, at: indexPath)
                 self.myTableView.reloadData()
                 
@@ -137,20 +156,23 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextScreen = NotesViewController()
-        self.navigationController?.pushViewController(nextScreen, animated: true)
         
+        let nextScreen = NotesViewController()
+        nextScreen.task = filteredData[indexPath.item]
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
 
-//extension MainViewController: NotesViewControllerDelegate {
+
+//extension MainViewController: NotesViewDelegate {
 //    func didTapSave() {
-//
+//        notesItems[index].taskToDo = text
+//        self.myTableView.reloadData()
 //    }
-//
 //}
-
-
+//
+//
 
 
 
