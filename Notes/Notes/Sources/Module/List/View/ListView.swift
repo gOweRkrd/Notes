@@ -21,7 +21,8 @@ class ListView: UIView {
         
         self.backgroundColor = .white
         myTableView.register(MyOwnCell.self, forCellReuseIdentifier: "CellID")
-        
+        myTableView.rowHeight = 50
+    
         addSybView()
         setupConstraints()
     }

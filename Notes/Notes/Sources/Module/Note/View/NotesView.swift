@@ -46,7 +46,7 @@ private extension NotesView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: self.topAnchor),
-            textView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
+            textView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             textView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             textView.heightAnchor.constraint(equalTo: self.heightAnchor)
         ])
