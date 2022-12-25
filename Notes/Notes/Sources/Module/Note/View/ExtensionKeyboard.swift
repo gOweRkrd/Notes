@@ -9,8 +9,8 @@ import UIKit
 
 
 extension UITextView {
-    
-    func addButtonKeyboard(Bold: (target: Any, action: Selector)? = nil,
+        
+     func addButtonKeyboard(Bold: (target: Any, action: Selector)? = nil,
                            Italic: (target: Any, action: Selector)? = nil,
                            Font:(target: Any, action: Selector)? = nil,
                            Image:(target: Any, action: Selector)? = nil) {
@@ -32,7 +32,8 @@ extension UITextView {
         self.inputAccessoryView = toolbar
     }
     
-    
+    // MARK: - Action Method
+
     @objc func boldlButtonTapped() {
         self.resignFirstResponder()
 
