@@ -26,6 +26,7 @@ class NotesViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationItem()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +39,8 @@ class NotesViewController: UIViewController {
     
     private func setData() {
         
-        notesView.textView.text = task.taskToDo!
+        notesView.textView.attributedText =
+        NSMutableAttributedString(string: task.taskToDo!, attributes: [ .font: UIFont.systemFont(ofSize: 20) ])
     }
     
     private func setupNavigationItem() {

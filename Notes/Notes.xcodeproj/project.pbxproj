@@ -12,6 +12,7 @@
 		509FAC6C295874A4001B0414 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FAC6B295874A4001B0414 /* ListView.swift */; };
 		509FAC6F29587859001B0414 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FAC6E29587859001B0414 /* NotesView.swift */; };
 		509FAC7229587E6A001B0414 /* MyOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FAC7129587E6A001B0414 /* MyOwnCell.swift */; };
+		509FAC7829599E01001B0414 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FAC7729599E01001B0414 /* ExtensionKeyboard.swift */; };
 		50C6830B2952EDFC00ECAD2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6830A2952EDFC00ECAD2D /* AppDelegate.swift */; };
 		50C6830D2952EDFC00ECAD2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6830C2952EDFC00ECAD2D /* SceneDelegate.swift */; };
 		50C6830F2952EDFC00ECAD2D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6830E2952EDFC00ECAD2D /* ListViewController.swift */; };
@@ -26,6 +27,7 @@
 		509FAC6B295874A4001B0414 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		509FAC6E29587859001B0414 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		509FAC7129587E6A001B0414 /* MyOwnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOwnCell.swift; sourceTree = "<group>"; };
+		509FAC7729599E01001B0414 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
 		50C683072952EDFC00ECAD2D /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6830A2952EDFC00ECAD2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C6830C2952EDFC00ECAD2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				50C6832B2953023000ECAD2D /* NotesViewController.swift */,
+				509FAC7729599E01001B0414 /* ExtensionKeyboard.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				509FAC6F29587859001B0414 /* NotesView.swift in Sources */,
 				504E0D7929544991006CD802 /* CoreDataDemo.xcdatamodeld in Sources */,
 				50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */,
+				509FAC7829599E01001B0414 /* ExtensionKeyboard.swift in Sources */,
 				50C6830B2952EDFC00ECAD2D /* AppDelegate.swift in Sources */,
 				5045C60029559E33002BCF8D /* ListModel.swift in Sources */,
 				50C6830D2952EDFC00ECAD2D /* SceneDelegate.swift in Sources */,

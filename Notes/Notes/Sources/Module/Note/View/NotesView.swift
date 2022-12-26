@@ -16,6 +16,7 @@ class NotesView: UIView {
         textView.isScrollEnabled = true
         textView.backgroundColor = .white
         textView.font = .systemFont(ofSize: 20)
+        textView.addButtonKeyboard()
         return textView
     }()
     
@@ -26,6 +27,7 @@ class NotesView: UIView {
         self.backgroundColor = .white
         addSubView()
         setupConstraints()
+       
     }
     
     required init?(coder: NSCoder) {
