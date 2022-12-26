@@ -18,7 +18,6 @@
 		50C683142952EDFD00ECAD2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C683132952EDFD00ECAD2D /* Assets.xcassets */; };
 		50C683172952EDFD00ECAD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C683152952EDFD00ECAD2D /* LaunchScreen.storyboard */; };
 		50C6832C2953023000ECAD2D /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6832B2953023000ECAD2D /* NotesViewController.swift */; };
-		50C683302953341500ECAD2D /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6832F2953341500ECAD2D /* ExtensionKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		50C683162952EDFD00ECAD2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50C683182952EDFD00ECAD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C6832B2953023000ECAD2D /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		50C6832F2953341500ECAD2D /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				509FAC6E29587859001B0414 /* NotesView.swift */,
-				50C6832F2953341500ECAD2D /* ExtensionKeyboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C683302953341500ECAD2D /* ExtensionKeyboard.swift in Sources */,
 				50C6830F2952EDFC00ECAD2D /* ListViewController.swift in Sources */,
 				509FAC6F29587859001B0414 /* NotesView.swift in Sources */,
 				504E0D7929544991006CD802 /* CoreDataDemo.xcdatamodeld in Sources */,

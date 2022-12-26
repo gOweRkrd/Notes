@@ -16,7 +16,6 @@ class NotesView: UIView {
         textView.isScrollEnabled = true
         textView.backgroundColor = .white
         textView.font = .systemFont(ofSize: 20)
-        textView.addButtonKeyboard()
         return textView
     }()
     
