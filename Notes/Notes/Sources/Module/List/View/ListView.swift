@@ -19,9 +19,11 @@ class ListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .white
+        backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
         myTableView.register(MyOwnCell.self, forCellReuseIdentifier: "CellID")
-        myTableView.rowHeight = 50
+        myTableView.rowHeight = 65
+        myTableView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        myTableView.separatorColor = .clear
     
         addSybView()
         setupConstraints()

@@ -12,7 +12,7 @@ class NotesViewController: UIViewController {
     // MARK: - Properties
     
     let notesView = NotesView()
-
+    
     var task: Task!
     
     // MARK: - Lifecycle
@@ -49,6 +49,7 @@ class NotesViewController: UIViewController {
         image?.withTintColor(.black)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(saveNotes))
         navigationItem.hidesBackButton = true
+     
     }
     
     // MARK: - Action Method

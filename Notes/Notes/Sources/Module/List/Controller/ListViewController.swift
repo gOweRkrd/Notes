@@ -128,7 +128,7 @@ extension ListViewController: UITableViewDataSource {
         }
         
         cell.textLabel?.text = model.filteredData[indexPath.row].taskToDo
-        
+        cell.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
         return cell
     }
 }

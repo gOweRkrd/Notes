@@ -13,7 +13,7 @@ class NotesView: UIView {
     
     lazy var textView: UITextView = {
         let textView = UITextView()
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
         textView.backgroundColor = .white
         textView.font = .systemFont(ofSize: 20)
         textView.addButtonKeyboard()
@@ -24,7 +24,7 @@ class NotesView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
         addSubView()
         setupConstraints()
     }
