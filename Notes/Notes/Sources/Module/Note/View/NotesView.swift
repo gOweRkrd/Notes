@@ -23,7 +23,7 @@ class NotesView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        self.backgroundColor = .white
         addSubView()
         setupConstraints()
     }
