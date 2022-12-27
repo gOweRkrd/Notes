@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotesView: UIView {
+final class NotesView: UIView {
     
     // MARK: - Cosomize
     

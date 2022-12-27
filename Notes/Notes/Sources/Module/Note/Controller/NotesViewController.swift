@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+final class NotesViewController: UIViewController {
     
     // MARK: - Properties
     

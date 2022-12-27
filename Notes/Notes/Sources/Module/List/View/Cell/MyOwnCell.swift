@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyOwnCell: UITableViewCell {
+final class MyOwnCell: UITableViewCell {
 
     // MARK: - Initialization
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListView: UIView {
+final class ListView: UIView {
     
     // MARK: - Properties
     
