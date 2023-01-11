@@ -1,10 +1,10 @@
-import UIKit
 import CoreData
+import UIKit
 
 // MARK: - Constant Constraints
 
 extension CGFloat {
-    static let myTableViewTopAnchor : CGFloat =  50
+    static let myTableViewTopAnchor: CGFloat = 50
 }
 
 final class ListViewController: UIViewController {
@@ -72,22 +72,21 @@ final class ListViewController: UIViewController {
     @objc
     private func addNotes() {
         let ac = UIAlertController(title: "Add Notes", message: "add new notes", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default) { action in
+        let ok = UIAlertAction(title: "Ok", style: .default) { _ in
             let textField = ac.textFields?[0]
-            self.model.saveTask(taskToDo:(textField?.text)!)
+            self.model.saveTask(taskToDo: (textField?.text)!)
             DispatchQueue.main.async {
                 self.listView.myTableView.reloadData()
             }
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .default,handler: nil)
-        ac.addTextField {
-            textField in
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        ac.addTextField { _ in
         }
         
         ac.addAction(ok)
         ac.addAction(cancel)
-        present(ac,animated: true,completion: nil)
+        present(ac, animated: true, completion: nil)
         
     }
 }
@@ -128,7 +127,7 @@ extension ListViewController: UITableViewDataSource {
         }
         
         cell.textLabel?.text = model.filteredData[indexPath.row].taskToDo
-        cell.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        cell.backgroundColor = UIColor(red: 242 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1)
         return cell
     }
 }
@@ -139,15 +138,11 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            do {
+       
                 let notes = model.filteredData[indexPath.row]
                 model.delete(notes, at: indexPath)
                 listView.myTableView.reloadData()
-                
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
+            
         }
     }
     
@@ -159,7 +154,3 @@ extension ListViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
-
-
-
-

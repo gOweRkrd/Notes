@@ -7,31 +7,29 @@
 
 import UIKit
 
-
 extension UITextView {
     
-    func addButtonKeyboard(Bold: (target: Any, action: Selector)? = nil,
-                           Italic: (target: Any, action: Selector)? = nil,
-                           Underline: (target: Any, action: Selector)? = nil)
-    {
+    func addButtonKeyboard(bold: (target: Any, action: Selector)? = nil,
+                           italic: (target: Any, action: Selector)? = nil,
+                           underline: (target: Any, action: Selector)? = nil) {
         
-        let Bold = Bold ?? (target: self, action: #selector(boldlButtonTapped))
-        let Italic = Italic ?? (target: self, action: #selector(italicButtonTapped))
-        let Underline = Underline ?? (target: self, action: #selector(underlineButtonTapped))
+        let bold = bold ?? (target: self, action: #selector(boldlButtonTapped))
+        let italic = italic ?? (target: self, action: #selector(italicButtonTapped))
+        let underline = underline ?? (target: self, action: #selector(underlineButtonTapped))
         
-        let toolbar : UIToolbar = UIToolbar()
+        let toolbar: UIToolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.items = [
-            UIBarButtonItem(title: "Bold", style: .plain, target: Bold.target, action: Bold.action),
-            UIBarButtonItem(title: "Italic", style: .done, target: Italic.target, action: Italic.action),
-            UIBarButtonItem(title: "Underline", style: .done, target: Underline.target, action: Underline.action)
+            UIBarButtonItem(title: "Bold", style: .plain, target: bold.target, action: bold.action),
+            UIBarButtonItem(title: "Italic", style: .done, target: italic.target, action: italic.action),
+            UIBarButtonItem(title: "Underline", style: .done, target: underline.target, action: underline.action)
         ]
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar
     }
     // MARK: - Private Method
     
-    private  func attributedString(highlightedTextStyle: [NSAttributedString.Key: Any]) -> Void {
+    private  func attributedString(highlightedTextStyle: [NSAttributedString.Key: Any]) {
         let selfText = self.attributedText
         
         let formattedString = NSMutableAttributedString(attributedString: selfText!)
@@ -65,8 +63,3 @@ extension UITextView {
         
     }
 }
-
-
-
-
-

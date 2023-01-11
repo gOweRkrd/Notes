@@ -5,8 +5,8 @@
 //  Created by Александр Косяков on 23.12.2022.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 struct ListModel {
 

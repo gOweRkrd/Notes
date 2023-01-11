@@ -19,10 +19,10 @@ final class ListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        backgroundColor = UIColor(red: 242 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1)
         myTableView.register(MyOwnCell.self, forCellReuseIdentifier: "CellID")
         myTableView.rowHeight = 65
-        myTableView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        myTableView.backgroundColor = UIColor(red: 242 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1)
         myTableView.separatorColor = .clear
     
         addSybView()
@@ -46,7 +46,7 @@ private extension ListView {
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            myTableView.topAnchor.constraint(equalTo: self.topAnchor,constant:.myTableViewTopAnchor),
+            myTableView.topAnchor.constraint(equalTo: self.topAnchor, constant: .myTableViewTopAnchor),
             myTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             myTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             myTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)

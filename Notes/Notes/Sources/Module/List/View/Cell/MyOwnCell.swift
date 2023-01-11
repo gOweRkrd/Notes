@@ -35,7 +35,4 @@ final class MyOwnCell: UITableViewCell {
         contentView.backgroundColor = .white
 
     }
-    
-    
-    
 }
